@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Converter", "Unit Converter\Unit Converter.csproj", "{EDDBFD69-C18D-4DFD-89DE-F3E07FD58E15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitConverter", "UnitConverter\UnitConverter.csproj", "{EDDBFD69-C18D-4DFD-89DE-F3E07FD58E15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

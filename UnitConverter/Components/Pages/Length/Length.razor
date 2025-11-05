@@ -1,0 +1,43 @@
+@page "/length"
+@using Microsoft.AspNetCore.Mvc.ModelBinding
+@rendermode InteractiveServer
+@inject Microsoft.AspNetCore.Components.NavigationManager Nav
+@using UnitConverter.Domain
+
+
+
+<PageTitle>Length</PageTitle>
+
+<h3>Unit Converter</h3>
+
+<div class="mb-3">
+    <button @onclick="ChangeToLength">Length</button>
+    <button @onclick="ChangeToWeight">Length</button>
+    <button @onclick="ChangeToTemperature">Length</button>
+</div>
+
+<div class="mb-3">
+    <label for="enterLength">Enter the length to convert</label>
+    <input id="enterLength" @bind="InputLength"/>
+</div>
+
+<EditForm Model="Model" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator/>
+    
+        <label for="enterOldUnit">Enter the length to convert</label>
+    <InputSelect id="enterOldUnit" @bind-Value="Model.Unit" TValue="LengthUnits?">
+        <option value="">-- select current unit --</option>
+        @foreach (LengthUnits u in AllUnits)
+        {
+            <option value="@u">@GetDisplayName(u)</option>
+        }
+    </InputSelect>
+    <ValidationMessage For="() => Model.Unit" />
+</EditForm>
+
+<div class="mb-3">
+    <label for="enterNewUnit">Enter the length to convert</label>
+    <input id="enterNewUnit" @bind="InputNewUnit"/>
+</div>
+
+<button @onclick="ConvertLength">Convert</button>

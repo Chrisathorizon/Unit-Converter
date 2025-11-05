@@ -1,0 +1,15 @@
+@page "/"
+@page "/{Name}"
+@rendermode InteractiveServer
+
+<PageTitle>Hello</PageTitle>
+
+<h3>Hello, @Name!</h3>
+
+<div class="mb-3">
+    <label for="nameInput">Name:</label>
+    <input id="nameInput" @bind="InputName" />
+    <button @onclick="OnGreet">Greet</button>
+</div>
+
+<p>@Greeting</p>

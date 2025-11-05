@@ -1,0 +1,30 @@
+@page "/weight"
+@rendermode InteractiveServer
+@inject Microsoft.AspNetCore.Components.NavigationManager Nav
+
+<PageTitle>Weight</PageTitle>
+
+<h3>Unit Converter</h3>
+
+<div class="mb-3">
+    <button @onclick="ChangeToLength">Length</button>
+    <button @onclick="ChangeToWeight">Length</button>
+    <button @onclick="ChangeToTemperature">Length</button>
+</div>
+
+<div class="mb-3">
+    <label for="enterLength">Enter the weight to convert</label>
+    <input id="enterLength" @bind="InputWeight"/>
+</div>
+
+<div class="mb-3">
+    <label for="enterOldUnit">Enter the length to convert</label>
+    <input id="enterOldUnit" @bind="InputOldUnit"/>
+</div>
+
+<div class="mb-3">
+    <label for="enterNewUnit">Enter the length to convert</label>
+    <input id="enterNewUnit" @bind="InputNewUnit"/>
+</div>
+
+<button @onclick="ConvertWeight">Convert</button>
